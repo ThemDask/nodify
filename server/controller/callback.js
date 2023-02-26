@@ -49,8 +49,9 @@ router.get('/', (req, res) => {
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
           const name = body["display_name"] 
-          console.log(name)
-          console.log("access_token:" + access_token)
+          console.log(body)
+          // console.log(name)
+          // console.log("access_token:" + access_token)
           res.redirect('http://localhost:3000/tokenise?' +
           querystring.stringify({
             name: name,
@@ -58,6 +59,31 @@ router.get('/', (req, res) => {
           }))
         });
 
+        // RETURNS
+        // {
+        //   country: 'GR',
+        //   display_name: 'Themos Daskalopoulos',
+        //   email: 'themosd@gmail.com',
+        //   explicit_content: { filter_enabled: false, filter_locked: false },
+        //   external_urls: {
+        //     spotify: 'https://open.spotify.com/user/21tfbbcf5uyjuam5jwixdddtq'
+        //   },
+        //   followers: { href: null, total: 29 },
+        //   href: 'https://api.spotify.com/v1/users/21tfbbcf5uyjuam5jwixdddtq',
+        //   id: '21tfbbcf5uyjuam5jwixdddtq',
+        //   images: [
+        //     {
+        //       height: null,
+        //       url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=747332628631663&height=300&width=300&ext=1680020102&hash=AeT_uzvRiSCFtHv3-wg',
+        //       width: null
+        //     }
+        //   ],
+        //   product: 'premium',
+        //   type: 'user',
+        //   uri: 'spotify:user:21tfbbcf5uyjuam5jwixdddtq'
+        // }
+
+        
         // we can also pass the token to the browser to make requests from there
         // res.redirect('/#' +
         //   querystring.stringify({
