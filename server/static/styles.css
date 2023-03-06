@@ -1,8 +1,36 @@
+* {
+    color: #ffffff;
+}
 
 
-body {background-color: #212529;}
+body {background-color: #212529;
+}
+
 .navbar
 {
     border-bottom:3px solid #198754;
 }
 
+.profilepic {
+    border-radius: 50%;
+}
+
+.list-group-item {
+    background-color:#212529;
+    color: #ffffff;
+}
+
+.form-select {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.form-select:focus {
+    border-color: #198754;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #198754;
+}
+
+select > option:hover{
+    box-shadow: 0 0 10px 100px #FED20F inset;
+    transition: all .2s ease-in-out;
+}
