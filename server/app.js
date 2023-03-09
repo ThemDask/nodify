@@ -11,6 +11,7 @@ var sanityRouter = require('./controller/sanity');
 var callbackRouter = require('./controller/callback');
 var authenticateRouter = require('./controller/authenticate');
 var tokeniseRouter = require('./controller/tokenise');
+var homeRouter = require('./controller/home');
 // body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -26,8 +27,18 @@ function logger(req, res, next) {
 
 app.use(logger);
 
+
+const session = require('express-session');
+
+// Configure session middleware
+app.use(session({
+  secret: 'mySecretKey',
+  resave: false,
+  saveUninitialized: true
+}));
+
 // static setup
-// app.use(express.static(path.join(__dirname, 'static')));
+// app.use('/static', express.static(path.join(__dirname, 'static')));
 
 //cross-origin requests
 app.use(cors());
@@ -36,7 +47,8 @@ app.use(cors());
 app.use('/', sanityRouter);
 app.use('/callback', callbackRouter);
 app.use('/authenticate', authenticateRouter);
-app.use('/tokenise', tokeniseRouter);
+app.use('/tokenise', tokeniseRouter); 
+app.use('/home', homeRouter);
 
 app.listen(port, () => {
   console.log(`App listening on http://localhost:${port}`)
