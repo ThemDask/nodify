@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
-        let access_token = body.access_token,
+        var access_token = body.access_token,
             refresh_token = body.refresh_token;
 
         var options = {
@@ -104,6 +104,9 @@ router.get('/', (req, res) => {
         //     refresh_token: refresh_token
         //   }));
       } 
+       else {
+        console.log("PROBLEMMM")
+       }
       // else {
       //   res.redirect('/#' +
       //     querystring.stringify({
