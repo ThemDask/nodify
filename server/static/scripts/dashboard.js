@@ -16,20 +16,6 @@ xhr.onload = function() {
 xhr.send();
 
 
-
-// var xhr_Json = new XMLHttpRequest();
-// xhrJson.open('GET', '/jsonEndpoint'); // get session data from 'tokenise' endpoint
-// xhrJson.onload = function() {
-//   if (xhrJson.status === 200) {
-//     var jsonResponse = JSON.parse(xhrJson.responseText);
-//     // Do something with the JSON response, such as display it in a console
-//     console.log(jsonResponse);
-//   } else {
-//     // Handle errors
-//   }
-// };
-// xhrJson.send();
-
 function loadDashboard(data) {
 
     let name_field = document.getElementById("name_field");

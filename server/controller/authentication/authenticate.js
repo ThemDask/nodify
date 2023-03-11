@@ -9,7 +9,7 @@ var querystring = require('querystring');
 router.get('/', (req, res) => {
 
   var state = '1231231231231231';
-  var scope = 'user-read-private user-read-email';
+  var scope = 'user-read-private user-read-email user-top-read';
 
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({

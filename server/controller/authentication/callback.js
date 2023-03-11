@@ -7,12 +7,12 @@ const session = require('express-session');
 var client_id = 'bfe7bf3e08b9474092cc13414ec1d09d';
 var client_secret = '098bb3063eea4184a5b99020b5b97edf'
 
-// Configure session middleware
-router.use(session({
-  secret: 'mySecretKey',
-  resave: false,
-  saveUninitialized: true
-}));
+// Configure session middleware TODO : may not be needed
+// router.use(session({
+//   secret: 'mySecretKey',
+//   resave: false,
+//   saveUninitialized: true
+// }));
 
 router.get('/', (req, res) => {
 
@@ -55,20 +55,12 @@ router.get('/', (req, res) => {
 
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
-          // const name = body["display_name"] 
-          // console.log(body)
-          // getDashboard(body);
-          // console.log(name)
-          // console.log("access_token:" + access_token)
 
           req.session.token = access_token;
           req.session.name = body["display_name"]; 
 
-          res.redirect('http://localhost:3000/home' // tokenise
-          // querystring.stringify({
-          //   name: name,
-          //   token: access_token 
-          // })
+          res.redirect('http://localhost:3000/home'
+
           )
         });
 

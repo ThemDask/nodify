@@ -1,17 +1,31 @@
-const request = require('request'); // "Request" library
+const request = require('request'); 
 const express = require('express')
 const app = express()
 const port = 3000
 const path = require('path');
+const session = require('express-session');
 
 var cors = require("cors");
 
-// declare endpoints
+
+// ***************************************************** //
+// ***************** declare endpoints ***************** //
+// ***************************************************** //
+
 var sanityRouter = require('./controller/sanity');
-var callbackRouter = require('./controller/callback');
-var authenticateRouter = require('./controller/authenticate');
-var tokeniseRouter = require('./controller/tokenise');
-var homeRouter = require('./controller/home');
+
+// authentication endpoints
+var callbackRouter = require('./controller/authentication/callback');
+var authenticateRouter = require('./controller/authentication/authenticate');
+var tokeniseRouter = require('./controller/authentication/tokenise');
+
+// dashboard endpoints
+var homeRouter = require('./controller/dashboard/home');
+
+// user endpoints
+var userDetailsRouter = require('./controller/user/user_details');
+
+
 // body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,7 +42,7 @@ function logger(req, res, next) {
 app.use(logger);
 
 
-const session = require('express-session');
+
 
 // Configure session middleware
 app.use(session({
@@ -43,12 +57,16 @@ app.use(session({
 //cross-origin requests
 app.use(cors());
 
-// declare router
+// ***************************************************** //
+// ****************** declare router  ****************** //
+// ***************************************************** //
+
 app.use('/', sanityRouter);
 app.use('/callback', callbackRouter);
 app.use('/authenticate', authenticateRouter);
 app.use('/tokenise', tokeniseRouter); 
 app.use('/home', homeRouter);
+app.use('/user_details', userDetailsRouter);
 
 app.listen(port, () => {
   console.log(`App listening on http://localhost:${port}`)
