@@ -1,4 +1,4 @@
-var client_id = 'bfe7bf3e08b9474092cc13414ec1d09d';
+var client_id = process.env.CLIENT_ID
 var redirect_uri = 'http://localhost:3000/callback';
 
 var request = require('request'); // "Request" library

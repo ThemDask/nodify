@@ -4,8 +4,8 @@ var router = express.Router();
 var request = require('request'); // "Request" library
 var querystring = require('querystring');
 const session = require('express-session');
-var client_id = 'bfe7bf3e08b9474092cc13414ec1d09d';
-var client_secret = '098bb3063eea4184a5b99020b5b97edf'
+var client_id = process.env.CLIENT_ID
+var client_secret = process.env.CLIENT_SECRET
 
 // Configure session middleware TODO : may not be needed
 // router.use(session({

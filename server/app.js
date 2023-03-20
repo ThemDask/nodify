@@ -6,7 +6,7 @@ const path = require('path');
 const session = require('express-session');
 
 var cors = require("cors");
-
+require('dotenv').config();
 
 // ***************************************************** //
 // ***************** declare endpoints ***************** //
