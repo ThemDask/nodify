@@ -3,13 +3,13 @@
 const ctx = document.getElementById('myChart');
 
 new Chart(ctx, {
-  type: 'bar',
+  type: 'pie',
   data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['rock', 'pop', 'techno/electronica', 'classical', 'traditional', 'jazz'],
     datasets: [{
-      label: '# of Votes',
+      label: '% of genre',
       data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
+      borderWidth: 3
     }]
   },
   options: {

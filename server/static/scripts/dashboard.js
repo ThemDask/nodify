@@ -47,9 +47,10 @@ function loadDashboard(dashboard_data) {
   let name_field = document.getElementById("name_field");
   name_field.innerHTML =  "Name: <i>" + dashboard_data[0] + "</i>";
 
+  // show top tracks/artists
   let list = document.getElementById("items_list");
   for (var i = 0; i < 5; i++) {
     list.children[i].innerHTML = dashboard_data[i+1]
-    // console.log(list.children[i]);
+
 }
 }
