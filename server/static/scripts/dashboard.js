@@ -54,3 +54,23 @@ function loadDashboard(dashboard_data) {
 
 }
 }
+
+
+
+function getStatistics() {
+  console.log("inside")
+  let xhr_statistics = new XMLHttpRequest();
+  xhr_statistics.open('GET', '/statistics');
+//     xhr_statistics.onload = function() {
+
+//     if (xhr_statistics.status === 200) {
+
+//         let data = xhr_statistics.responseText;
+//         let data_tokenise = JSON.parse(data);
+
+//         dashboard_data[0] = data_tokenise.name;
+//     }
+// };
+
+xhr_statistics.send();
+}
