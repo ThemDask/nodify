@@ -56,9 +56,11 @@ router.get('/', (req, res) => {
         // use the access token to access the Spotify Web API
         request.get(options, function(error, response, body) {
 
+          // get user session data
           req.session.token = access_token;
           req.session.name = body["display_name"]; 
-
+          req.session.profilepic = body["images"][0].url;
+          req.session.followers = body["followers"].total
           res.redirect('http://localhost:3000/home'
 
           )

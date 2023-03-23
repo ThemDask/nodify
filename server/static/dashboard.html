@@ -7,12 +7,12 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>  
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             
           <a class="navbar-brand" href="#">
-            <img src="../static/assets/test_logo_2.png" alt="" width="60" height="40">
+            <img src="./assets/test_logo_2.png" width="40" height="30">
             nodify
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,12 +56,12 @@
 
             <div class="col-md-3"> <!-- ------------- FIRST COLUMN ------------- -->
                 <div class="p-5  bg-dark">
-                  <img class="profilepic ms-4" src="./assets/spotify.png" width="200" height="200"> 
-                  <h5 class="mt-5" id="name_field"></h5>
+                  <img class="profilepic ms-4" id="profilepic" src="./assets/spotify.png" width="200" height="200"> 
+                  <h5 class="mt-5" id="name_field">Name: </h5>
                   <hr/>
-                  <h5 class="mt-3">Profile Type: <i>Premium</i></h5>
+                  <h5 class="mt-3" id="followers">Followers: </h5>
                   <hr/>
-                  <h5 class="mt-3">Spotify Profile: <i>a link here</i></h5>
+                  <h5 class="mt-3">Profile Type: <i>Premium</i> </h5>
                   <hr/>
                   <div class="row">
                     <div class="col-6">
@@ -95,17 +95,49 @@
                     <div class="col-4"></div>
                     <div class="col-md-4">
                       <button type="button" class="btn btn-lg btn-dark btn-outline-success">Generate Music Profile...</button>
+
+
+
                     </div>
+
+
+
                   </div>
             </div>
 
             <div class="col-md-3"> <!-- ------------- THIRD COLUMN ------------- -->
               <div class="p-4 bg-dark"></div>
                 <div class="row">
-                  <div class="col-9">
+                  <div class="col-md">
                     <div class="h5 pb-2 text-light border-bottom border-light">Browse music profiles </div>
                   </div>  
                 </div>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-4 ps-1">
+                      <div class="nav nav-fill nav-pills " role="tablist" aria-orientation="vertical">
+                        <button class=" navpill nav-link active " id="tab1-tab" data-bs-toggle="pill" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">The explorer</button>
+                        <button class=" navpill nav-link" id="tab2-tab" data-bs-toggle="pill" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">The traditional</button>
+                        <button class=" navpill nav-link" id="tab3-tab" data-bs-toggle="pill" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">The zoomer</button>
+                      </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="tab-content">
+                        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                          <p>This is the content of Tab 1</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                          <p>This is the content of Tab 2</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                          <p>This is the content of Tab 3</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
             </div>
     </div>
 

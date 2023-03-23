@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     // get token from session
     token = req.session.token;
     // console.log("MY TOKEN: " + token);
-
+ 
     var options_artists = {
         url: 'https://api.spotify.com/v1/me/top/artists?'  +
         querystring.stringify({
