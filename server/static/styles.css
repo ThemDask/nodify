@@ -12,6 +12,8 @@ body {background-color: #212529;
     border-bottom:3px solid #198754;
 }
 
+/* 1ST COLUMN */
+
 .profilepic {
     border-radius: 50%;
 }
@@ -32,7 +34,9 @@ body {background-color: #212529;
 }
 
 
-
+.dashboard_selector {
+    margin-right: 100px;
+}
 
 /*  *************************************  */
             /* 3RD COLUMN */

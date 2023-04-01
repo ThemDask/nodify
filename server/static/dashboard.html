@@ -7,7 +7,8 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body onload="call_API()">
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             
@@ -55,7 +56,7 @@
         <div class="row">
 
             <div class="col-md-3"> <!-- ------------- FIRST COLUMN ------------- -->
-                <div class="p-5  bg-dark">
+                <div class="p-5   bg-dark">
                   <img class="profilepic ms-4" id="profilepic" src="./assets/spotify.png" width="200" height="200"> 
                   <h5 class="mt-5" id="name_field">Name: </h5>
                   <hr/>
@@ -64,14 +65,23 @@
                   <h5 class="mt-3">Profile Type: <i>Premium</i> </h5>
                   <hr/>
                   <div class="row">
-                    <div class="col-6">
-                      <label for="form-select "><h4>Top 5 Artists:</h4></label>
+                    <div class="col-md-3">
+                      <h4>Top 5</h4>
                     </div>
-                    <div class="col">
-                      <select class="form-select" aria-label="Default select example">
-                        <option value="1">latest</option>
-                        <option value="2">6 months</option>
-                        <option value="3">all time</option>
+                    <br class="d-md-none">
+                    <div class="col-md-4 " >
+                      <select class="form-select dashboard_selector" id="item_types" aria-label="Default select example" onchange="call_API()">
+                        <option value="artists">artists</option>
+                        <option value="tracks">tracks</option>
+                      </select>
+                    </div>
+                    <br class="d-md-none">
+                    <br class="d-md-none">
+                    <div class="col-md-5 ">
+                      <select class="form-select" id="item_time_range"  aria-label="Default select example"  onchange="call_API()">
+                        <option value="short_term">latest</option>
+                        <option value="medium_term">6 months</option>
+                        <option value="long_term">all time</option>
                       </select>
                     </div>
                   </div>   
@@ -86,7 +96,7 @@
             </div>
 
             <div class="col-md-6"> <!-- ------------- SECOND COLUMN ------------- -->
-              <div class="p-4 bg-dark"></div>
+              <div class="p-md-4 bg-dark"></div>
               <div class="col-md border border-success border-opacity-50 rounded-3">
                 <img class="img-fluid rounded " style="height: 700px;" src="./assets/demo_black.jpg" width="1000"  > 
               </div>
@@ -106,7 +116,7 @@
             </div>
 
             <div class="col-md-3"> <!-- ------------- THIRD COLUMN ------------- -->
-              <div class="p-4 bg-dark"></div>
+              <div class="p-md-4 bg-dark"></div>
                 <div class="row">
                   <div class="col-md">
                     <div class="h5 pb-2 text-light border-bottom border-light">Browse music profiles </div>
