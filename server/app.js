@@ -25,7 +25,7 @@ var statisticsRouter = require('./controller/dashboard/statistics');
 
 // user endpoints
 var userDetailsRouter = require('./controller/user/user_details');
-
+var userDataRouter = require('./controller/user/user_data');
 
 // body parser middleware
 app.use(express.json());
@@ -69,7 +69,10 @@ app.use('/tokenise', tokeniseRouter);
 app.use('/home', homeRouter);
 app.use('/user_details', userDetailsRouter);
 app.use('/statistics', statisticsRouter);
+app.use('/user_data', userDataRouter);
 
+
+// START APP //
 app.listen(port, () => {
   console.log(`App listening on http://localhost:${port}`)
 })

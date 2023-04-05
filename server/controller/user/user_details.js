@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// const session = require('express-session');
 var querystring = require('querystring');
 var request = require('request'); // "Request" library
 
@@ -18,7 +17,7 @@ router.get('/?type/:type/time_range/:time_range', (req, res) => {
         querystring.stringify({
             limit: 5, 
             offset: 0,
-            time_range: item_time_range // TODO add time range as variable
+            time_range: item_time_range 
         }),
     
         headers: { 'Authorization': 'Bearer ' + token },
@@ -30,7 +29,7 @@ router.get('/?type/:type/time_range/:time_range', (req, res) => {
         querystring.stringify({
             limit: 5, 
             offset: 0,
-            time_range: item_time_range // TODO add time range as variable
+            time_range: item_time_range 
         }),
     
         headers: { 'Authorization': 'Bearer ' + token },
@@ -48,18 +47,14 @@ router.get('/?type/:type/time_range/:time_range', (req, res) => {
 
     request.get(options, function(error, response, body) {
         var items = [];
-        // var songName = [];
 
         for (i=0; i<5;i++) {
+          console.log(body.items[i]);
           items[i] = body.items[i].name;
-            // console.log(artists[i]);
         }
         res.json(items)
-        // console.log(body.items[1].name);
-        // console.log(response.statusCode);
         
       }); 
-
 
   })
 

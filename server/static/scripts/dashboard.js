@@ -44,7 +44,7 @@ function call_API() {
 
 
 
-// display data in client side
+// helper function to display data in client side
 function loadDashboard(dashboard_data) {
 
   // show user name
@@ -84,4 +84,21 @@ function getStatistics() {
 // };
 
 xhr_statistics.send();
+}
+
+
+function generate_profile() {
+
+  let xhr_user_data = new XMLHttpRequest();
+  xhr_user_data.open('GET', '/user_data');
+  xhr_user_data.onload = function() {
+    if (xhr_user_data.status === 200) {
+
+      let data = xhr_user_data.responseText;
+      let data_parsed = JSON.parse(data);
+      console.log(data_parsed)
+
+    }
+  };
+  xhr_user_data.send();
 }
