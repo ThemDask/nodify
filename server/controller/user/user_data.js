@@ -111,7 +111,7 @@ function analyze(data) {
   // console.log(values) 
 
   let profile = "default"
-  if (values.popularity > 10) {
+  if (values.popularity > 100) {
     console.log("You're a jock!");
     profile = "jock";
 
@@ -119,7 +119,7 @@ function analyze(data) {
     console.log("You're a dancer!");
     profile = "dancer";
 
-  } else if (values.speechiness > 0.5){
+  } else if (values.speechiness > 0.8){
     console.log("You love to sing!");
     profile = "singer";
 
@@ -131,7 +131,7 @@ function analyze(data) {
     console.log("You like LOUD music!");
     profile = "loud";
 
-  } else if (values.liveness > 0.5) {
+  } else if (values.liveness > 0.8) {
     console.log("You're ALIVE with music!");
     profile = "alive";
 
