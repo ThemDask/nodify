@@ -95,55 +95,42 @@
                 </div>
             </div>
 
-            <div class="col-md-6"> <!-- ------------- SECOND COLUMN ------------- -->
-              <div class="p-md-4 bg-dark"></div>
-              <div class="col-md border border-success border-opacity-50 rounded-3">
-                <img class="img-fluid rounded" id="music_profile"  style="height: 700px;" src="./assets/demo_black.jpg" width="1000px"  > 
-              </div>
-              <div class="p-3 bg-dark"></div>
-                  <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-md-4">
-                      <button type="button" class="btn btn-lg btn-dark btn-outline-success" onclick="generate_profile()">Generate Music Profile...</button>
-                    </div>
-                  </div>
-            </div>
-
-            <div class="col-md-3"> <!-- ------------- THIRD COLUMN ------------- -->
-              <div class="p-md-4 bg-dark"></div>
-                <div class="row">
-                  <div class="col-md">
-                    <div class="h5 pb-2 text-light border-bottom border-light">Browse music profiles </div>
-                  </div>  
-                </div>
-
-                <div class="container">
-                  <div class="row">
-                    <div class="col-4 ps-1">
-                      <div class="nav nav-fill nav-pills " role="tablist" aria-orientation="vertical">
-                        <button class=" navpill nav-link active " id="tab1-tab" data-bs-toggle="pill" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">The explorer</button>
-                        <button class=" navpill nav-link" id="tab2-tab" data-bs-toggle="pill" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">The traditional</button>
-                        <button class=" navpill nav-link" id="tab3-tab" data-bs-toggle="pill" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">The zoomer</button>
-                      </div>
-                    </div>
-                    <div class="col-8">
-                      <div class="tab-content">
-                        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-                          <p>This is the content of Tab 1</p>
-                        </div>
-                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                          <p>This is the content of Tab 2</p>
-                        </div>
-                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-                          <p>This is the content of Tab 3</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div id="gradient" class="col-md-9 bg-gradient"> <!-- ------------- SECOND COLUMN ------------- -->
+              <div class="p-5" id="content">
+                <h3 id="content_header"></h3>
+                <img id="content_image" class="rounded float-end" src="">
                 
+                <p id="content_txt"></p>
+              </div>
+                <div class="h-75 d-flex justify-content-center align-items-center">
+                  <button id="content_btn" type="button" class="btn btn-lg btn-dark btn-outline-success" onclick="generate_profile()">Generate Music Profile...</button>
+                </div>
+               
+                <!-- <img  class="img-fluid rounded" id="music_profile"  style="height: 200px;" src="./assets/alive.jpg" width="200px"  >  -->
             </div>
+
+            <!-- FOOTER -->
+            <!-- <footer class="container p-4 rounded bg-info">
+              <div class="d-lg-flex justify-content-between">
+                <div>
+                  <span>LOGO</span>
+                </div>
+                <div class="copyright">
+                  <p>developed and maintained by <a href="#" target="_blank">company</a></p>
+                </div>
+                <div>
+                  <ul class="d-flex gap-3 list-unstyled">
+                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                    <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </footer> -->
+
     </div>
+
+    
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -53,7 +53,7 @@ function loadDashboard(dashboard_data) {
 
   // display profile picture
   let profilepic_field = document.getElementById("profilepic");
-  profilepic_field.src = dashboard_data[1];
+  profilepic_field.innerHTML = dashboard_data[1];
 
   //display followers
   let followers_field = document.getElementById("followers");
@@ -97,33 +97,70 @@ function generate_profile() {
       let data = xhr_user_data.responseText;
       let data_parsed = JSON.parse(data);
       
+      let bg = document.getElementById("gradient");
 
-      let img = document.getElementById("music_profile");
+      let content_btn = document.getElementById("content_btn");
+      let content_div = document.getElementById("content");
+      let content_text = document.getElementById("content_txt");
+      let content_img = document.getElementById("content_image");
+      let conent_header = document.getElementById("content_header");
 
       if (data_parsed != null) {
         switch (data_parsed) {
           case "dancer":
-            img.src = "./assets/dancer.jpg";
+            bg.innerHTML = "./assets/dancer.jpg";
             break;
-          case "default": 
-            img.src = "./assets/default.jpg";
+
+          case "default": // test case
+
+            content_div.removeAttribute("hidden");
+
+            content_text.innerHTML =   '<br>' +
+            '<ul style="list-style-type: none; padding-left: 1.5em;">' +
+            
+            '<li style="list-style-type: none; position: relative;"><h5>&#x27B1; Your music taste is diverse and eclectic, embracing a wide range of genres and styles.</h5></li>' +
+            '<br>' +
+            '<li style="list-style-type: none; position: relative;"><h5>&#x27B1;  You appreciate the beauty of different musical expressions and find joy in discovering new sounds.</h5></li>' +
+            '<br>' +
+            '<li style="list-style-type: none; position: relative;"><h5>&#x27B1;  Your openness to various genres makes your musical journey exciting and unpredictable.</h5></li>' +
+            '<br>' +
+            '<li style="list-style-type: none; position: relative;"><h5>&#x27B1;  You\'re a versatile listener, exploring music from various genres and eras.</h5></li>' +
+            '<br>' + 
+            '<li style="list-style-type: none; position: relative;"><h5>&#x27B1;  Your music taste is ever-evolving, and you appreciate the unique qualities that each style brings.</h5></li>' +
+            '<br>' +
+          '</ul>';
+            
+            content_img.src = "./assets/default.jpg";
+            conent_header.innerHTML = ' You\'re a <span style="color: #1DB954;">Versatile Listener</span>';
+
+            // remove gradient and button
+            bg.classList.add("bg-dark");
+            bg.classList.remove("bg-gradient");
+            content_btn.style.visibility = "hidden"
+
             break;
+
           case "alive":
-            img.src = "./assets/alive.jpg";
+            bg.innerHTML = "./assets/alive.jpg";
             break;
+
           case "loud":
-            img.src = "./assets/loud.jpg";
+            bg.innerHTML = "./assets/loud.jpg";
             break;
-          case "jock":
-            img.src = "./assets/jock.jpg";
+
+          case "jock": 
+            bg.innerHTML = "./assets/jock.jpg";
             break;
+
           case "singer":
-            img.src = "./assets/singer.jpg";
+            bg.innerHTML = "./assets/singer.jpg";
             break;
+
           case "raver":
-            img.src = "./assets/raver.jpg";
+            bg.innerHTML = "./assets/raver.jpg";
             break;
         }
+
       }
       
     }
