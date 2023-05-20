@@ -96,8 +96,36 @@ function generate_profile() {
 
       let data = xhr_user_data.responseText;
       let data_parsed = JSON.parse(data);
-      console.log(data_parsed)
+      
 
+      let img = document.getElementById("music_profile");
+
+      if (data_parsed != null) {
+        switch (data_parsed) {
+          case "dancer":
+            img.src = "./assets/dancer.jpg";
+            break;
+          case "default": 
+            img.src = "./assets/default.jpg";
+            break;
+          case "alive":
+            img.src = "./assets/alive.jpg";
+            break;
+          case "loud":
+            img.src = "./assets/loud.jpg";
+            break;
+          case "jock":
+            img.src = "./assets/jock.jpg";
+            break;
+          case "singer":
+            img.src = "./assets/singer.jpg";
+            break;
+          case "raver":
+            img.src = "./assets/raver.jpg";
+            break;
+        }
+      }
+      
     }
   };
   xhr_user_data.send();

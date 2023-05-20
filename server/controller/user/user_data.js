@@ -111,9 +111,9 @@ function analyze(data) {
   // console.log(values) 
 
   let profile = "default"
-  if (values.popularity > 50) {
+  if (values.popularity > 10) {
     console.log("You're a jock!");
-    profile = "Jock";
+    profile = "jock";
 
   } else if (values.danceability > 0.7) {
     console.log("You're a dancer!");
